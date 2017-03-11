@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>
+        {% block title %}
+        Shorten that URL
+        {% endblock title %}
+
+    </title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="http://getbootstrap.com/examples/cover/cover.css" rel="stylesheet">
+{% block styles %}
+<style>
+body{
+    background-color: #226268;
+    background-image: url('http://4.bp.blogspot.com/-VvriY0pJXBQ/VkcZOBIuzKI/AAAAAAAAgi4/dQgtKUbqhwQ/s1600/7040162-mountains-background.jpg');
+    background-size: cover;
+
+
+}
+
+.btn-link {
+  color: #de7506;
+  text-shadow: none;
+}
+.btn-link:hover {
+  color: red;
+}
+
+</style>
+{% endblock styles %}
+</head>
+<body>
+
+    <div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+      <div class="cover-container">
+
+
+
+        <div class="inner cover">
+            {% block content %}
+            {% endblock content %}
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+    function CopyToClipboard(containerid) {
+      if (document.selection) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(document.getElementById(containerid));
+        range.select().createTextRange();
+        document.execCommand("");
+
+      } else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(document.getElementById(containerid));
+        window.getSelection().addRange(range);
+        document.execCommand("");
+         alert("text copied")
+      }
+    }
+  </script>
+
+<footer>
+    Adrian Oleszczak © Wszelkie prawa zastrzeżone
+</footer>
+</body>
+
+</html>
